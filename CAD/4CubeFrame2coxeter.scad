@@ -74,7 +74,7 @@ module hypercube_frame() {
 
     // Optional: draw small spheres at vertices
     for (v = verts3D)
-        translate(v) sphere(r = radius * 2);
+        color("red") translate(v) sphere(r = radius * 2);
 }
 
 // ---------------------------------------------------------------------

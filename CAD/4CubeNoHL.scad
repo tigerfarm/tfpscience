@@ -7,7 +7,7 @@
 side = 50;                          // 4D cube edge length
 edgeDiameter = 3;                   // 4D cube edge width(diameter)
 edgeRadius = edgeDiameter / 2;
-vertexRadius = edgeDiameter * 2;    // Vertex sphere diameter
+vertexRadius = edgeDiameter;        // Vertex sphere diameter
 
 // $fn = 96      // for extra-smooth rods.
 $fn = 64;        // cylinder smoothness
