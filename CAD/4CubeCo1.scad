@@ -119,7 +119,8 @@ module hypercube_frame() {
     // -------------------------------------------------------------------------
     // Draw spheres at vertices.
     for (v = verts3D) {
-        echo("v: ", v);
+        // echo("v: ", v);
+        // Print all vertices except the center one which is a hidden vertex.
         if (v != [0, 0, 0]) {
             translate(v) sphere(r = vertexRadius);
         }
