@@ -6,7 +6,7 @@
 side = 50;                          // 4D cube edge length
 edgeDiameter = 3;                   // 4D cube edge width(diameter)
 edgeRadius = edgeDiameter / 2;
-vertexRadius = edgeDiameter * 2;    // Vertex sphere diameter
+vertexRadius = edgeDiameter;    // Vertex sphere diameter
 
 // $fn = 96      // for extra-smooth rods.
 $fn = 64;        // cylinder smoothness
@@ -120,7 +120,7 @@ module hypercube_frame() {
     // Draw spheres at vertices.
     for (v = verts3D) {
         // echo("v: ", v);
-        // Print all vertices except the center one which is a hidden vertex.
+        // Do not print the center vertex which is a hidden vertex.
         if (v != [0, 0, 0]) {
             translate(v) sphere(r = vertexRadius);
         }

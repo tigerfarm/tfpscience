@@ -128,13 +128,13 @@ module hypercube_frame() {
     // }
     // The above generated the following.
     // Vertices:
-    // translate([0, 0, 0]) sphere(r = vertexRadius);
+    // translate([0,  0,   0]) sphere(r = vertexRadius);    // Center vertex
     translate([-50,   0,   0]) sphere(r = vertexRadius);
     translate([  0, -50,   0]) sphere(r = vertexRadius);
     translate([  0,   0, -50]) sphere(r = vertexRadius);
     translate([  0,   0,  50]) sphere(r = vertexRadius);
     translate([  0,  50,   0]) sphere(r = vertexRadius);
-    translate([ 50,   0,  0]) sphere(r = vertexRadius);
+    translate([ 50,   0,   0]) sphere(r = vertexRadius);
     translate([-25, -25, -25]) sphere(r = vertexRadius);
     translate([-25, -25,  25]) sphere(r = vertexRadius);
     translate([-25,  25, -25]) sphere(r = vertexRadius);
