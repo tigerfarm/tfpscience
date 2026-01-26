@@ -1,1 +1,0 @@
-import("openSCAD/4cube1.svg");

@@ -1,9 +1,5 @@
-// Code from ChatGPT.
-// ---
-// The query:
-//  OpenSCAD: 50mm × 50mm × 50mm × 50mm hypercube frame made of 3mm cylindrical rods
-// ---
-// The response:
+// 4-Code frame
+//
 // OpenSCAD: 4D hypercube (tesseract) frame projected into 3D
 // 50mm edge length, 3mm cylindrical rods
 

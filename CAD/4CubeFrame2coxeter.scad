@@ -1,13 +1,5 @@
-// Code from ChatGPT.
-// ---
-// The query:
-//  OpenSCAD: 50mm × 50mm × 50mm × 50mm hypercube frame made of 3mm cylindrical rods using a Coxeter plane projection.
-// ---
-// The response:
-//  That’s a beautiful request — you want a tesseract (4D hypercube) wireframe built from 3 mm cylindrical rods, with a Coxeter-plane projection (the most symmetric 4D-to-3D projection, often used to visualize the 8-cell).
-//  We can’t “render” 4D directly in OpenSCAD, but we can compute the Coxeter projection of the 16 hypercube vertices into 3D coordinates and draw the 32 edges between them.
-//  Here’s a complete, ready-to-run OpenSCAD script that does exactly that:
-// ---
+// 4-Code frame
+//
 // OpenSCAD: 50mm × 50mm × 50mm × 50mm hypercube frame (tesseract)
 // Projected into 3D using a Coxeter-plane projection
 // Edges are 3mm-diameter cylindrical rods

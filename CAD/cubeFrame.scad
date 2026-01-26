@@ -1,4 +1,5 @@
-// Code from ChatGPT.
+// Original code from ChatGPT.
+//  I debugged the code and made it more developer friendly.
 // The query:
 //  OpenSCAD: 50mm × 50mm × 50mm cube frame made of 3mm cylindrical rods
 

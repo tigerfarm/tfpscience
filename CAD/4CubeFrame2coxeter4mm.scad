@@ -1,4 +1,6 @@
-// Code from ChatGPT.
+// 4-Code frame
+//
+// Original code from ChatGPT. I fixed up the code to be more developer friendly.
 // ---
 // The query:
 //  OpenSCAD: 50mm × 50mm × 50mm × 50mm hypercube frame made of 3mm cylindrical rods using a Coxeter plane projection.
