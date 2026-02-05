@@ -5,11 +5,11 @@
 //  you can remove the rods that connect to the inside center vertex. 
 
 // --- PARAMETERS ---
-scale_factor = 25; // Scale the object size for better visualization/printing
-diameter = 4;      // Rod diameter
+scale_factor = 25;      // Scale the object size for better visualization/printing
+diameter = 4;           // Rod diameter
 radius = diameter / 2;
-rod_sides = 4;     // Square prism frame
-$fn = rod_sides;   // Set $fn for prism shape
+rod_sides = 4;          // Square prism frame
+$fn = rod_sides;        // Set $fn for prism shape
 
 // ---------------------------------------------------------------------
 // 1. Define Vertices (14 vertices of the Rhombic Dodecahedron)

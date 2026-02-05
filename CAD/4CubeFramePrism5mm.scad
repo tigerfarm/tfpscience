@@ -4,12 +4,12 @@
 // I modified the code which I gave to Google Gemini.
 // I had Google Gemini modify the code to have prismatic rods (e.g., square cross-section).
 
-side = 50;       // 4D cube edge length (e.g., 50mm)
-diameter = 3;    // Rod diameter (measured across flats for square, or circumscribed for others)
+// --- PARAMETERS ---
+edge_length = 50;       // 4D cube edge length (e.g., 50mm ~ 2")
+diameter = 5;           // Rod diameter (measured across flats for square, or circumscribed for others)
 radius = diameter / 2;
-
-rod_sides = 4;   // <-- NEW PARAMETER: 4 for square, 6 for hex, 8 for octagonal prism
-$fn = rod_sides; // Set $fn to the number of sides for the prism shape
+rod_sides = 4;          // <-- NEW PARAMETER: 4 for square, 6 for hex, 8 for octagonal prism
+$fn = rod_sides;        // Set $fn to the number of sides for the prism shape
 
 // ---------------------------------------------------------------------
 // Helper: draw a prism (rod) between two 3D points
@@ -53,7 +53,7 @@ module hypercube_frame() {
     // Generate 16 vertices of 4D cube centered at origin
     verts4D = [
         for (x=[-1,1], y=[-1,1], z=[-1,1], w=[-1,1])
-            [x*side/2, y*side/2, z*side/2, w*side/2]
+            [x*edge_length/2, y*edge_length/2, z*edge_length/2, w*edge_length/2]
     ];
 
     // Project all 4D vertices into 3D space
@@ -62,7 +62,7 @@ module hypercube_frame() {
     // Connect vertices that differ by exactly one coordinate
     for (i = [0 : len(verts4D)-1])
         for (j = [i+1 : len(verts4D)-1])
-            if (norm(verts4D[i] - verts4D[j]) == side)
+            if (norm(verts4D[i] - verts4D[j]) == edge_length)
                 rod(verts3D[i], verts3D[j], radius);
 
     // Optional: Draw small spheres at vertices
