@@ -1,4 +1,4 @@
-﻿// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 // 4-Cube Coxeter projection into 3D.
 // ---
 // This version is a 3D version without any center lines or the center vertex.
@@ -6,7 +6,7 @@
 
 edgeDiameter = 3;                   // 4D cube edge width(diameter)
 edgeRadius = edgeDiameter / 2;
-vertexRadius = edgeDiameter;        // Vertex sphere diameter
+vertexRadius = 2;        // Vertex sphere diameter
 
 // $fn = 96      // for extra-smooth rods.
 $fn = 64;        // cylinder smoothness
@@ -45,8 +45,8 @@ module hypercube_frame() {
     // ---------------------------------------
        edge([-25,  25,  25], [  0,  45,   5]);  // zwxy top left back
        edge([-25,  25, -25], [  0,  45,   5]);  // ywxz top mid-left back
-       edge([  0,  45,   5], [ 25,  25, -25]);  // xwyz top back mid-right
-       edge([  0,  45,   5], [ 25,  25,  25]);  // wxyz top back right
+       edge([ 25,  25, -25], [  0,  45,   5]);  // xwyz top back mid-right
+       edge([ 25,  25,  25], [  0,  45,   5]);  // wxyz top back right
     // ---------------------------------------
        edge([-25,  25,  25], [  0,   5,  45]);  // wxy  front left
        edge([ 25,  25, -25], [ 45,   0,   0]);  // wzy  back right mid
@@ -89,24 +89,26 @@ module hypercube_frame() {
 
     // -------------------------------------------------------------------------
     // Vertices:
-/*
-    translate([  0,   0,   0]) sphere(r = vertexRadius);    // Center vertex
+
+    translate([  5,   0,   0]) sphere(r = vertexRadius);    // Center vertex
+    translate([ -5,   0,   0]) sphere(r = vertexRadius);    // Center vertex
     //
-    translate([-50,   0,   0]) sphere(r = vertexRadius);
-    translate([  0, -50,   0]) sphere(r = vertexRadius);
-    translate([  0,   0, -50]) sphere(r = vertexRadius);
-    translate([  0,   0,  50]) sphere(r = vertexRadius);
-    translate([  0,  50,   0]) sphere(r = vertexRadius);
-    translate([ 50,   0,   0]) sphere(r = vertexRadius);
+    //           x    y    z 
+    translate([-45,   0,   0]) sphere(r = vertexRadius);    // most left
+    translate([ 45,   0,   0]) sphere(r = vertexRadius);    // most right
+    translate([  0, -45,  -5]) sphere(r = vertexRadius);    // front bottom
+    translate([  0,  45,   5]) sphere(r = vertexRadius);    // top back
+    translate([  0,  -5, -45]) sphere(r = vertexRadius);    // bottom back
+    translate([  0,   5,  45]) sphere(r = vertexRadius);    // front top
     translate([-25, -25, -25]) sphere(r = vertexRadius);
     translate([-25, -25,  25]) sphere(r = vertexRadius);
-    translate([-25,  25, -25]) sphere(r = vertexRadius);
-    translate([ 25, -25, -25]) sphere(r = vertexRadius);
     translate([-25,  25,  25]) sphere(r = vertexRadius);
-    translate([ 25, -25,  25]) sphere(r = vertexRadius);
-    translate([ 25,  25, -25]) sphere(r = vertexRadius);
     translate([ 25,  25,  25]) sphere(r = vertexRadius);
-*/
+    translate([ 25, -25,  25]) sphere(r = vertexRadius);
+    translate([ 25, -25, -25]) sphere(r = vertexRadius);
+    translate([ 25,  25, -25]) sphere(r = vertexRadius);
+    translate([-25,  25, -25]) sphere(r = vertexRadius);
+    
 }
 
 // -----------------------------------------------------------------------------
