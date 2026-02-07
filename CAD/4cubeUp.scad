@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 // 4-Cube Coxeter plane projection into a 3D print object.
 // ---
 // This version has 2 center vertices
@@ -42,36 +42,36 @@ module hypercube_frame() {
     // Exterior edges
     //         x    z    y      x    z    y
     // ---------------------------------------
-       edge([-25,  25,  25], [  0,  40, 10]);  // zwxy top left back
-       edge([-25,  25, -25], [  0,  40, 10]);  // ywxz top mid-left back
-       edge([ 25,  25, -25], [  0,  40, 10]);  // xwyz top back mid-right
-       edge([ 25,  25,  25], [  0,  40, 10]);  // wxyz top back right
+       edge([-25,  25,  25], [  0,  40,  10]);  // zwxy top left back
+       edge([-25,  25, -25], [  0,  40,  10]);  // ywxz top mid-left back
+       edge([ 25,  25, -25], [  0,  40,  10]);  // xwyz top back mid-right
+       edge([ 25,  25,  25], [  0,  40,  10]);  // wxyz top back right
     // ---------------------------------------
-       edge([ 25,  25,  25], [  0, 10,  40]);  // zxy  front right top
+       edge([ 25,  25,  25], [  0,  10,  40]);  // zxy  front right top
        edge([ 25,  25, -25], [-10,   0,   0]);  // zwy  back right center
-       edge([-25,  25, -25], [-40,   0,   0]);  // zwx  mid back left
-       edge([ 25,  25,  25], [10,   0,   0]);  // yxz  top right center
+       edge([-25,  25, -25], [-45,   0,   0]);  // zwx  mid back left
+       edge([ 25,  25,  25], [ 10,   0,   0]);  // yxz  top right center
        edge([ 25,  25, -25], [  0, -10, -40]);  // ywz  bottom back mid-right
-       edge([-25,  25,  25], [-40,   0,   0]);  // ywx  top left
+       edge([-25,  25,  25], [-45,   0,   0]);  // ywx  top left
        edge([-25,  25, -25], [  0, -10, -40]);  // xwz  back left back
-       edge([ 25,  25,  25], [ 40,   0,   0]);  // xyx  mid right top
+       edge([ 25,  25,  25], [ 45,   0,   0]);  // xyz  mid right top
        edge([-25,  25,  25], [-10,   0,   0]);  // xwy  top left center
-       edge([ 25,  25, -25], [ 40,   0,   0]);  // wzy  back right mid
-       edge([-25,  25, -25], [10,   0,   0]);  // wxz  back left center
-       edge([-25,  25,  25], [  0, 10,  40]);  // wxy  front left
+       edge([ 25,  25, -25], [ 45,   0,   0]);  // wyz  back right mid
+       edge([-25,  25, -25], [ 10,   0,   0]);  // wxz  back left center
+       edge([-25,  25,  25], [  0,  10,  40]);  // wxy  front left
     // ---------------------------------------
-       edge([ 25, -25,  25], [ 40,   0,   0]);  // zy   front right
+       edge([ 25, -25,  25], [ 45,   0,   0]);  // zy   front right
        edge([-25, -25, -25], [  0, -10, -40]);  // zw   back left
-       edge([-25, -25,  25], [10,   0,   0]);  // zx   front left center
-       edge([ 25, -25, -25], [ 40,   0,   0]);  // yz   bottom right
-       edge([-25, -25,  25], [  0, 10,  40]);  // yx   left center
-       edge([ 25, -25, -25], [10,   0,   0]);  // yx   bottom right center
+       edge([-25, -25,  25], [ 10,   0,   0]);  // zx   front left center
+       edge([ 25, -25, -25], [ 45,   0,   0]);  // yz   bottom right
+       edge([-25, -25,  25], [  0,  10,  40]);  // yx   left center
+       edge([ 25, -25, -25], [ 10,   0,   0]);  // yx   bottom right center
        edge([ 25, -25,  25], [-10,   0,   0]);  // wy   front right center
-       edge([ 25, -25,  25], [  0, 10,  40]);  // xy   front right top
-       edge([-25, -25, -25], [-40,   0,   0]);  // xw   bottom left
+       edge([ 25, -25,  25], [  0,  10,  40]);  // xy   front right top
+       edge([-25, -25, -25], [-45,   0,   0]);  // xw   bottom left
        edge([ 25, -25, -25], [  0, -10, -40]);  // wz   bottom back, right
        edge([-25, -25, -25], [-10,   0,   0]);  // wy   bottom left center
-       edge([-25, -25,  25], [-40,   0,   0]);  // wx   mid front left
+       edge([-25, -25,  25], [-45,   0,   0]);  // wx   mid front left
     // ---------------------------------------
        edge([ 25, -25, -25], [  0, -40, -10]);  // z    front right
        edge([ 25, -25,  25], [  0, -40, -10]);  // y    front mid-right
@@ -88,8 +88,8 @@ module hypercube_frame() {
     translate([-10,   0,   0]) sphere(r = vertexRadius);    // Center vertex
     //
     //           x    y    z 
-    translate([-40,   0,   0]) sphere(r = vertexRadius);    // most left
-    translate([ 40,   0,   0]) sphere(r = vertexRadius);    // most right
+    translate([-45,   0,   0]) sphere(r = vertexRadius);    // most left
+    translate([ 45,   0,   0]) sphere(r = vertexRadius);    // most right
     translate([  0, 10,  40]) sphere(r = vertexRadius);    // front top
     translate([  0, -40, -10]) sphere(r = vertexRadius);    // front bottom
     translate([  0,  40, 10]) sphere(r = vertexRadius);    // back top 
