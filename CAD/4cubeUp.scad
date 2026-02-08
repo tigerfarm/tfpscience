@@ -42,6 +42,7 @@ module hypercube_frame() {
     // Exterior edges
     //         x    z    y      x    z    y
     // ---------------------------------------
+    
        edge([-25,  25,  25], [  0,  40,  10]);  // zwxy top left back
        edge([-25,  25, -25], [  0,  40,  10]);  // ywxz top mid-left back
        edge([ 25,  25, -25], [  0,  40,  10]);  // xwyz top back mid-right
