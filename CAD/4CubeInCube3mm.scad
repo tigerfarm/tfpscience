@@ -7,7 +7,8 @@ side = 50;      // edge length in mm
 diameter = 3;   // rod diameter in mm
 radius = diameter / 2;
 proj_dist = 100; // projection distance (controls perspective amount)
-$fn = 48;
+
+$fn = 64;        // cylinder smoothness, 96 for extra-smooth rods and vertex spheres.
 
 // ------------- 4D to 3D projection function -------------
 function project4D(p) =

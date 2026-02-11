@@ -8,8 +8,7 @@ side = 50;       // 4D cube edge length
 diameter = 3;    // rod diameter
 radius = diameter / 2;
 
-// $fn = 96      // for extra-smooth rods.
-$fn = 64;        // cylinder smoothness
+$fn = 64;        // cylinder smoothness, 96 for extra-smooth rods and vertex spheres.
 
 // ---------------------------------------------------------------------
 // Helper: draw a cylinder (rod) between two 3D points

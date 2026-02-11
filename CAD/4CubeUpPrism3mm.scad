@@ -5,7 +5,7 @@
 //  instead of one vertex
 //  that is actually two 4D vertices in the same 3D position.
 //
-edgeDiameter = 3;   // 4-cube edge width(diameter)
+edgeDiameter = 50;   // 4-cube edge width(diameter)
 edgeRadius = edgeDiameter / 2;
 rod_sides = 4;      // Rod shape, 4: square, 6: hex, 64: cylinder.
 $fn = rod_sides;    // Set $fn to the number of sides for the prism shape

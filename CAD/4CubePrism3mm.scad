@@ -1,15 +1,21 @@
-// OpenSCAD Code for 3D Projection of a 4D Cube (Tesseract)
+﻿// OpenSCAD Code for 3D Projection of a 4D Cube (Tesseract)
 // Frame changed from cylindrical rods to prismatic rods (e.g., square cross-section).
 // Original from ChatGPT.
 // I modified the code which I gave to Google Gemini.
 // I had Google Gemini modify the code to have prismatic rods (e.g., square cross-section).
 
 // --- PARAMETERS ---
-edge_length = 50;       // 4D cube edge length (e.g., 50mm ~ 2")
-diameter = 3;           // Rod diameter (measured across flats for square, or circumscribed for others)
+
+edge_length = 50;   // 4D cube edge length (e.g., 50mm ~ 2")
+diameter = 3;       // Rod diameter or flats if square
 radius = diameter / 2;
-rod_sides = 4;          // <-- NEW PARAMETER: 4 for square, 6 for hex, 8 for octagonal prism
-$fn = rod_sides;        // Set $fn to the number of sides for the prism shape
+
+// Set $fn to the number of sides for the frame strut prism shape
+rod_sides = 4;      // Rod shape, 4: square, 6: hex, 64: cylinder.
+                    // 96: extra-smooth rods and vertex spheres.
+
+vertexDiameter = 3; // Vertex diameter
+vertexShape = 64;   // 64: sphere, 4: cube.
 
 // ---------------------------------------------------------------------
 // Helper: draw a prism (rod) between two 3D points
@@ -67,7 +73,7 @@ module hypercube_frame() {
 
     // Optional: Draw small spheres at vertices
     for (v = verts3D)
-        color("red") translate(v) sphere(r = radius * 2, $fn=32); // Use a smooth sphere
+        color("red") translate(v) sphere(r = vertexDiameter, $fn=vertexShape);
 }
 
 // ---------------------------------------------------------------------

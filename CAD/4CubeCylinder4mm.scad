@@ -18,8 +18,7 @@ side = 50;       // 4D cube edge length
 diameter = 4;    // rod diameter. 3mm is under 1/8 inch. 4mm is over 1/8 inch.
 radius = diameter / 2;
 
-// $fn = 96      // for extra-smooth rods.
-$fn = 64;        // cylinder smoothness
+$fn = 64;        // cylinder smoothness, 96 for extra-smooth rods and vertex spheres.
 
 // ---------------------------------------------------------------------
 // Helper: draw a cylinder (rod) between two 3D points
