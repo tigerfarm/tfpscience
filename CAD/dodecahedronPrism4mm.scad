@@ -6,7 +6,7 @@
 
 // --- PARAMETERS ---
 scale_factor = 25;      // Scale the object size for better visualization/printing
-diameter = 6;           // Rod diameter
+diameter = 4;           // Rod diameter
 radius = diameter / 2;
 rod_sides = 5;          // Square prism frame
 $fn = rod_sides;        // Set $fn for prism shape
