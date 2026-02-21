@@ -1,13 +1,12 @@
-// In ChatGPT:
+﻿// In ChatGPT:
 //  OpenSCAD code for a 2" × 2" square frame, made from 1/8" diameter cylindrical rods
 
 // Size need to be mm.
-inch = 25.4;                // inch → mm conversion
-side = 2 * inch;            // square side length (2")
-diameter = 1/8 * inch;      // rod diameter (1/8")
+side = 50;              // about 2"
+diameter = 4;           // rod diameter
 radius = diameter / 2;
 
-$fn = 64; // smoothness of cylinders
+$fn = 64; // 64 for a cylinders. 4 for square prism.
 
 // ---------- Modules ----------
 
