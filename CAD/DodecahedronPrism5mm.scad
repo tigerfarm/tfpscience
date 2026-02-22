@@ -1,8 +1,8 @@
 // --- Parameters ---
 size = 50;              // Strut length          
-thickness = 4;          // Radius of the struts
+thickness = 5;          // Radius of the struts
 $fn = 4;                // Square prism: 4      
-vertixDiameter = 4.2;   // Radius of the struts
+vertixDiameter = 4.7;   // Radius of the struts
 
 phi = (1 + sqrt(5)) / 2; 
 
