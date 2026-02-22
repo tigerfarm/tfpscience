@@ -1,15 +1,15 @@
-// Original code from ChatGPT.
+﻿// Original code from ChatGPT.
 //  I debugged the code and made it more developer friendly.
 // The query:
 //  OpenSCAD: 50mm × 50mm × 50mm cube frame made of 3mm cylindrical rods
 
-side = 50;        // cube edge length (mm)
-diameter = 5;     // rod diameter (mm)
+side = 50;          // cube edge length (mm)
+diameter = 4;       // rod diameter (mm)
 radius = diameter / 2;
-rod_sides = 4;      // Prismatic rods
+rodShape = 4;       // Square prism: 4, cylinder: 64
 $fn = 4; // smoothness for round rods
 
-vertexRadius = 2.4; // Spheres at the vertices
+vertexRadius = 2.1;
 
 // ---------- Module: rod between two 3D points ----------
 module rod(p1, p2, r=radius) {
@@ -20,7 +20,7 @@ module rod(p1, p2, r=radius) {
         rot_axis = cross([0,0,1], v);       // rotation axis
         translate(p1)
             rotate(a, rot_axis)
-                cylinder(h=h, r=r, center=false, $fn = rod_sides);
+                cylinder(h=h, r=r, center=false, $fn = rodShape);
     }
 }
 
@@ -52,10 +52,8 @@ module cube_frame(side, radius) {
     for (e = edges)
         rod(p[e[0]], p[e[1]], radius);
 
-    // Vertix spheres.
-    //
-    $fn = 64;       // smooth spheres
-    //
+    // Spheres at the vertices
+    $fn = 64;
     //for (corner in p)
     //    translate(corner) sphere(r=radius);
     // Correct ChatGPT code:
