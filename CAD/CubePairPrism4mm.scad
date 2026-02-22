@@ -1,5 +1,5 @@
 // --- PARAMETERS ---
-cube_side = 40;     
+cube_side = 50;     
 diameter = 4;     
 radius = diameter / 2;
 
@@ -46,7 +46,7 @@ module anchored_cube_frame(s) {
     for (pt = v) {
         // Highlight the shared vertex at origin in a different color
         if (norm(pt) < 0.1) {
-            color("Red") translate(pt) sphere(r = vertexDiameter * 1.5, $fn = vertexShape);
+            color("Red") translate(pt) sphere(r = vertexDiameter, $fn = vertexShape);
         } else {
             translate(pt) sphere(r = vertexDiameter, $fn = vertexShape);
         }
