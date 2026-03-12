@@ -2,10 +2,11 @@
 // Generates a 3D perspective projection of a regular 4D simplex.
 
 // --- Parameters ---
-size = 60;           // Scale of the 4D object
-strut_radius = 1.2;  // Thickness of the edges for 3D printing
-projection_w = 2.5;  // Perspective factor (higher = more "depth" compression)
-$fn = 30;
+size = 60;              // Scale of the 4D object
+strut_radius = 1.2;     // Thickness of the edges for 3D printing
+projection_w = 2.5;     // Perspective factor (higher = more "depth" compression)
+sphereRadius = strut_radius * 1.4;
+$fn = 24;               // Number of sides of the struts: 4 is square.
 
 // --- 4D Vertex Coordinates (Regular 5-cell / 4-Simplex) ---
 // These are the vertices of a regular 4-simplex in 4D space.
@@ -22,9 +23,6 @@ vertices4d = [
 function project4d(p, w_dist) = 
     let(factor = 1 / (w_dist - p[3]))
     [p[0] * factor * size, p[1] * factor * size, p[2] * factor * size];
-
-// --- 3D Points List ---
-points3d = [ for (v = vertices4d) project4d(v, projection_w) ];
 
 // --- Render Logic ---
 module edge(p1, p2) {
@@ -43,7 +41,11 @@ union() {
     }
 }
 
+// --- 3D Points List ---
+points3d = [ for (v = vertices4d) project4d(v, projection_w) ];
+
 // Visual indicator of vertices
 for (p = points3d) {
-    translate(p) color("DarkCyan") sphere(r = strut_radius * 1.4);
+    $fn = 64;   // Make the vertices smooth spheres.
+    translate(p) color("DarkCyan") sphere(r = sphereRadius);
 }
