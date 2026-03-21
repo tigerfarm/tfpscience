@@ -5,11 +5,13 @@
 //  instead of one vertex
 //  that is actually two 4D vertices in the same 3D position.
 //
-edgeDiameter = 50;   // 4-cube edge width(diameter)
+edgeDiameter = 3;   // 4-cube edge width(diameter)
 edgeRadius = edgeDiameter / 2;
+
+// Set $fn to the number of sides for the prism shape
 rod_sides = 4;      // Rod shape, 4: square, 6: hex, 64: cylinder.
-$fn = rod_sides;    // Set $fn to the number of sides for the prism shape
-//
+                    // 96: extra-smooth rods and vertex spheres.
+
 vertexRadius = 2;   // Vertex sphere diameter
 
 // ---------------------------------------------------------------------------

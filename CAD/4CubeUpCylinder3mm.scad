@@ -9,7 +9,7 @@ edgeDiameter = 3;   // 4-cube edge width(diameter)
 edgeRadius = edgeDiameter / 2;
 
 // Set $fn to the number of sides for the prism shape
-rod_sides = 4;      // Rod shape, 4: square, 6: hex, 64: cylinder.
+rod_sides = 64;      // Rod shape, 4: square, 6: hex, 64: cylinder.
                     // 96: extra-smooth rods and vertex spheres.
 
 vertexRadius = 2;   // Vertex sphere diameter
