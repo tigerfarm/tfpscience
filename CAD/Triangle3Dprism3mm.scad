@@ -1,13 +1,15 @@
 // Tetrahedron Frame
+//  A Tetrahedron is a 3-Triangle, 3D triangle.
+//  A Triangle is a 2-Triangle, 3D triangle, or just a triangle.
 //
 // --- PARAMETERS ---
-edge_length = 50;   // Length of each side of the tetrahedron [cite: 4]
-diameter = 5;       // Rod thickness [cite: 4]
+edge_length = 50;   // Length of each side of the tetrahedron
+diameter = 3;       // Rod thickness
 radius = diameter / 2;
+rod_sides = 4;      // 4 for square prisms, 64 for cylinders
 
-rod_sides = 4;      // 4 for square prisms, 64 for cylinders [cite: 4, 6]
-vertexDiameter = 2.4; // Size of the corner spheres [cite: 4]
-vertexShape = 64;   // Smoothness of vertices [cite: 4]
+vertexDiameter = 1.4; // Size of the corner spheres. Other size: 2.4
+vertexShape = 64;   // Smoothness of vertices
 
 // ---------------------------------------------------------------------
 // Helper: draw a prismatic rod between two 3D points 
@@ -41,15 +43,17 @@ module tetrahedron_frame() {
 
     // Draw Edges (6 total for a tetrahedron)
     // Every vertex connects to every other vertex
-    for (i = [0 : 3]) {
-        for (j = [i + 1 : 3]) {
-            rod(verts[i], verts[j], radius);
+    color("GhostWhite") {
+        for (i = [0 : 3]) {
+            for (j = [i + 1 : 3]) {
+                rod(verts[i], verts[j], radius);
+            }
         }
     }
 
     // Draw Vertices 
     for (v = verts) {
-        color("FireBrick") 
+        color("red")        // or use FireBrick
             translate(v) 
                 sphere(r = vertexDiameter, $fn = vertexShape);
     }
