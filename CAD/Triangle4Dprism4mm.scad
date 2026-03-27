@@ -9,9 +9,9 @@
 edge_length = 50;
 diameter = 4;           // Rod thickness
 radius = diameter / 2;
-rod_sides = 4;          // Prismatic rods
+rodShape = 4;           // 4:Prismatic rods, 64:cylinder
 //
-vertexDiameter = 2.4; 
+vertexDiameter = 2; 
 vertexShape = 64;
 
 // ---------------------------------------------------------------------
@@ -23,13 +23,13 @@ module rod(p1, p2, r = radius) {
         if (abs(v.x) < 0.001 && abs(v.y) < 0.001) {
             translate(p1)
                 rotate([v.z < 0 ? 180 : 0, 0, 0])
-                    cylinder(h = h, r1 = r, r2 = r, center = false, $fn = rod_sides);
+                    cylinder(h = h, r1 = r, r2 = r, center = false, $fn = rodShape);
         } else {
             a = acos(v.z / h);
             rot_axis = cross([0, 0, 1], v);
             translate(p1)
                 rotate(a, rot_axis)
-                    cylinder(h = h, r1 = r, r2 = r, center = false, $fn = rod_sides);
+                    cylinder(h = h, r1 = r, r2 = r, center = false, $fn = rodShape);
         }
     }
 }
@@ -55,9 +55,9 @@ module pentachoron() {
     // Project 4D vertices to 3D
     verts3d = [ for (v = verts4d) project4d(v, edge_length) ];
 
-    // Rods/Edges colored White
+    // Rods/Edges colored White or GhostWhite.
     color("GhostWhite") {
-        for (i = [0 : 4]) {
+        for (i = [0 : 3]) {
             for (j = [i + 1 : 4]) {
                 rod(verts3d[i], verts3d[j]);
             }
