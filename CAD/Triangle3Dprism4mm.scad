@@ -2,14 +2,14 @@
 //  A Tetrahedron is a 3-Triangle, 3D triangle.
 //  A Triangle is a 2-Triangle, 3D triangle, or just a triangle.
 //
-// --- PARAMETERS ---
-edge_length = 50;   // Length of each side of the tetrahedron
-diameter = 3;       // Rod thickness
+// --- PARAMETERS, though, when scaled up, rod edges are thick ---
+edge_length = 73;       // Length of each side of the tetrahedron
+diameter = 4;         // Rod thickness
 radius = diameter / 2;
-rod_sides = 4;      // 4 for square prisms, 64 for cylinders
+rod_sides = 4;          // 4 for square prisms, 64 for cylinders
 
-vertexDiameter = 1.4; // Size of the corner spheres. Other size: 2.4
-vertexShape = 64;   // Smoothness of vertices
+vertexDiameter = 1.6;   // Size of the corner spheres. Other size: 2.4
+vertexShape = 64;       // Smoothness of vertices
 
 // ---------------------------------------------------------------------
 // Helper: draw a prismatic rod between two 3D points 
