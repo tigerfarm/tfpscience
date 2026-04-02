@@ -1,8 +1,10 @@
-// --- Parameters ---
-size = 50;              // Strut length          
+// Dodecahedron which is a 3D pentagon.
+//
+// --- Tested Parameters to print a solid shape frame ---
+size = 30;              // Strut length          
 thickness = 4;          // Radius of the struts
 $fn = 4;                // Square prism: 4      
-vertixDiameter = 4.2;   // Radius of the struts
+vertixDiameter = 4.2;   // Radius of the vertices
 
 phi = (1 + sqrt(5)) / 2; 
 
