@@ -3,8 +3,11 @@ edge_length = 30;   // Increased slightly for better visibility
 diameter = 6;     // Thinner rods help clarify the complex 80-edge structure 
 radius = diameter / 2;
 rod_sides = 4;      // Prismatic rods as requested [cite: 6]
-vertexDiameter = 3.1; 
+vertexDiameter = 3.2; 
 vertexShape = 64;   
+
+vertexColor = "yellow";
+edgeColor = "blue";
 
 // Helper: draw a prism (rod) between two 3D points [cite: 6]
 module rod(p1, p2, r = radius) {
@@ -13,7 +16,7 @@ module rod(p1, p2, r = radius) {
     if (h > 0) {
         a = acos(v.z / h);
         rot_axis = cross([0, 0, 1], v);
-        translate(p1)
+        color(edgeColor) translate(p1)
             rotate(a, rot_axis)
                 cylinder(h = h, r = r, center = false, $fn = rod_sides); 
     }
@@ -43,7 +46,12 @@ module penteract_frame() {
     // Generate 32 vertices (2^5) [cite: 9, 10]
     verts5D = [
         for (x=[-1,1], y=[-1,1], z=[-1,1], w=[-1,1], v=[-1,1])
-            [x*edge_length/2, y*edge_length/2, z*edge_length/2, w*edge_length/2, v*edge_length/2]
+            [
+                x*edge_length/2, 
+                y*edge_length/2, 
+                z*edge_length/2, 
+                w*edge_length/2, 
+                v*edge_length/2]
     ];
 
     // Project into 3D space [cite: 10]
@@ -57,7 +65,7 @@ module penteract_frame() {
 
     // Draw vertex markers [cite: 12]
     for (v = verts3D)
-        color("Crimson") translate(v) sphere(r = vertexDiameter, $fn=vertexShape);
+        color(vertexColor) translate(v) sphere(r = vertexDiameter, $fn=vertexShape);
 }
 
 // Render the 5-Cube
